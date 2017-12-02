@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web TEST</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/skeleton.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body class="container">
+
+    <h1 class="title">Web notifications</h1>
+    <p>Test hier de webnotification library</p>
+    <p>"De notificaties verschijnen ook in het berichtencentrum van macos en windows"</p>
+    <p>"somige notificaties kunnen te groot zijn, ze zijn uitklapbaar"</p>
+    <section class="buttons row">
+        <span class="twelve columns">
+            <button class="button-primary" onclick="wn.getPermission()">Notifications permission</button>
+        </span>
+        <span class="twelve columns">
+             <button class="button-primary" onclick="wn.send('This boi', 'hello little computer','test-image,jpg')">Notificaytion test</button>
+        </span>
+        <span class="twelve columns">
+            <button class="button-primary" onclick="">Unused button</button>
+        </span>
+
+    </section>
+</body>
+<script src="../src/index.js"></script>
+</html>
