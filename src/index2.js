@@ -1,9 +1,6 @@
+//Functions die wordt aangeroepen om door de data van de JSON te loopen
 
-
-
-//A loop that runs through all the data from the JSON based on a timer. Sadly the function runs all the timers at once so it had to add up their time for them to pauze inbetween
-
-function Wait() {
+function wait() {
 
     fetch('../src/verhaaltje.json').then(function (response) {
         return response.json();
@@ -23,4 +20,14 @@ function Wait() {
 };
 
 
+function spitarray() {
+
+    fetch('../src/verhaaltje.json').then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        console.log(data);
+        data['intro'].push({"title":"test","text":"test","image":"test","timestamp":"test"});
+        console.log(data);
+    });
+};
 
