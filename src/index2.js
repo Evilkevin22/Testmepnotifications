@@ -1,5 +1,21 @@
 //Functions die wordt aangeroepen om door de data van de JSON te loopen
 
+
+(function (globals) {
+    "use strict";
+    globals.jsonfile = [];
+}((1, eval)('this')));
+
+(function loadData() {
+    fetch('../src/verhaaltje.json').then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        jsonfile = data;
+        console.log(jsonfile);
+    })
+})();
+
+
 function wait() {
 
     fetch('../src/verhaaltje.json').then(function (response) {
@@ -20,14 +36,18 @@ function wait() {
 };
 
 
-function spitarray() {
+function addarray() {
 
-    fetch('../src/verhaaltje.json').then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        console.log(data);
-        data['intro'].push({"title":"test","text":"test","image":"test","timestamp":"test"});
-        console.log(data);
-    });
-};
+
+    console.log(jsonfile);
+    jsonfile['intro'].push({"title": "test", "text": "test", "image": "test", "timestamp": "test"});
+    console.log(jsonfile);
+}
+
+function removearray() {
+
+    console.log(data);
+    jsonfile.intro.splice(1, 3);
+    console.log(data);
+}
 
