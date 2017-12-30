@@ -99,3 +99,19 @@ function CreateTableFromJSON() {
     divContainer.innerHTML = "";
     divContainer.appendChild(table);
 }
+
+function erbijerbij() {
+
+    var inputnaam = document.getElementById("name");
+    var inputtext = document.getElementById("speech");
+    var inputimg = document.getElementById("image");
+    var inputtime = document.getElementById("time");
+
+    var naamvalue = inputnaam.value;
+    var textvalue = inputtext.value;
+    var imagevalue = inputimg.value;
+    var timevalue = inputtime.value;
+
+    jsonfile['intro'].push({"title": naamvalue, "text": textvalue, "image": imagevalue, "timestamp": timevalue});
+    console.log(jsonfile);
+}

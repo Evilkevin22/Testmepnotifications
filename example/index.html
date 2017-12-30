@@ -9,24 +9,27 @@
 </head>
 <body class="container">
 
-    <h1 class="title">Web notifications</h1>
-    <p>Test hier de webnotification library</p>
-    <p>"De notificaties verschijnen ook in het berichtencentrum van macos en windows"</p>
-    <section class="buttons row">
+<h1 class="title">Web notifications</h1>
+<p>Test hier de webnotification library</p>
+<p>"De notificaties verschijnen ook in het berichtencentrum van macos en windows"</p>
+<section class="buttons row">
         <span class="twelve columns">
-            <button class="button-primary" onclick="wn.getPermission()">Notifications permission</button>
+            <button class="button-primary" onclick="wn.getPermission()">Notification permission</button>
         </span>
-        <span class="twelve columns">
-             <button class="button-primary" onclick="wn.send('This boi','hello little computer','../src/TestP.png')">Notificaytion test1</button>
+    <span class="twelve columns">
+             <button class="button-primary" onclick="wn.send('This boi','hello little computer','../src/TestP.png')">Notification test</button>
         </span>
-        <span class="twelve columns">
-             <button class="button-primary" onclick="addarray()">add to json array</button>
+    <span class="twelve columns">
+             <button class="button-primary" onclick="addarray()">add Sample</button>
         </span>
-        <span class="twelve columns">
-             <button class="button-primary" onclick="CreateTableFromJSON()">remove items from json file</button>
+    <span class="twelve columns">
+             <button class="button-primary" onclick="CreateTableFromJSON()">show JSON table</button>
         </span>
-        <div id="showData"></div>
-    </section>
+
+    <span id="addition">
+    <input id="name" type="text" placeholder="Title"> <input id="speech" type="text" placeholder="text"><input id="image" type="text" placeholder="imagepath" ><input id="time" type="text" placeholder="Miliseconds"> <button class="button-primary" onclick="erbijerbij()">Add the above comment to the JSON</button></span>
+    <div id="showData"></div>
+</section>
 </body>
 <script src="../src/index2.js"></script>
 <script src="../src/index.js"></script>
