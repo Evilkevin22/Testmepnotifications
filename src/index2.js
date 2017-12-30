@@ -78,7 +78,9 @@ function CreateTableFromJSON() {
         tr.appendChild(th);
     }
 
-
+    var buttonHeader = document.createElement("th");
+    buttonHeader.innerHTML = "delete";
+    tr.appendChild(buttonHeader);
 
     for (var i = 0; i < jsonfile.intro.length; i++) {
 
@@ -89,7 +91,8 @@ function CreateTableFromJSON() {
             tabCell.innerHTML = jsonfile.intro[i][col[j]];
         }
 
-
+        var buttonCell = tr.insertCell(-1);
+        buttonCell.innerHTML = "<button onclick='killrow()'(" + i + ")'>Delete</button>"
     }
 
     var divContainer = document.getElementById("showData");
