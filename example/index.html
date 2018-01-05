@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Web TEST</title>
+    <!-- Hier worden skeleton css aangeroepen voor een makkelijke opmaak  -->
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/skeleton.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -23,7 +24,7 @@
              <button class="button-primary" onclick="addarray()">add Sample</button>
         </span>
     <span class="twelve columns">
-             <button class="button-primary" onclick="CreateTableFromJSON()">show JSON table</button>
+             <button class="button-primary" onclick="CreateTableFromJSON()">show/reload JSON table</button>
         </span>
 
     <span id="addition">
@@ -31,6 +32,8 @@
     <div id="showData"></div>
 </section>
 </body>
+
+<!-- hier worden beide  javascript files aangeroepen  -->
 <script src="../src/index2.js"></script>
 <script src="../src/index.js"></script>
 </html>

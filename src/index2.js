@@ -1,6 +1,7 @@
-//Functions die wordt aangeroepen om door de data van de JSON te loopen
 
 
+//De bootleg fake manier van een globale variabele aanmaken. Dit is gedaan zodat ik maar 1 keer fetch hoef te gebruiken
+// Hierin wordt de JSON data opgehaald en geparsed zodat de rest van de funties alleen maar jsonfile hoeven aan te roepen
 (function (globals) {
     "use strict";
     globals.jsonfile = [];
@@ -11,50 +12,54 @@
         return response.json();
     }).then(function (data) {
         jsonfile = data;
-        console.log(jsonfile);
     })
 })();
 
 
+//De wacht functie die een voor een de notificaties van de JSON looped
+
 function wait() {
+    for (var i = 0; i < jsonfile.intro.length; i++) {
+        function pass(i) {
+            setTimeout(function () {
+                wn.send(jsonfile.intro[i].title, jsonfile.intro[i].text, jsonfile.intro[i].image);
+                console.log(jsonfile.intro[i].timestamp);
 
-    fetch('../src/verhaaltje.json').then(function (response) {
-        return response.json();
-    }).then(function (data) {
-        for (var i = 0; i < data.intro.length; i++) {
-            function pass(i) {
-                setTimeout(function () {
-                    wn.send(data.intro[i].title, data.intro[i].text, data.intro[i].image);
-                    console.log(data.intro[i].timestamp);
+            }, jsonfile.intro[i].timestamp);
+        };
+        pass(i);
 
-                }, data.intro[i].timestamp);
-            };
-            pass(i);
+    }
 
-        }
-    });
-};
 
+// Deze functie voegt een test object toe aan het bestaande JSON bestand doormiddel van PUSH
 
 function addarray() {
 
 
     console.log(jsonfile);
     jsonfile['intro'].push({"title": "test", "text": "test", "image": "test", "timestamp": "test"});
-    console.log(jsonfile);
+    // console.log(jsonfile);
 }
+
+// Deze funtie verwijderd het eerste object van de JSON door middel van de geconfigureerde splice.
 
 function removearray() {
 
     console.log(data);
-    jsonfile.intro.splice(1, 3);
-    console.log(data);
+    jsonfile.intro.splice(0, 1);
+    // console.log(data);
 }
+
+// Deze functie wordt gebruikt bij het verwijderen van een object uit de JSON tabel. Hij wordt aangeroepen als een van de delete buttons wordt geklikt.
 
 function killrow(i) {
     jsonfile.intro.splice(i, 1);
-    console.log(jsonfile)
+    // console.log(jsonfile)
 }
+
+// Deze functie creert de tabel waarbij hij eerst kijkt naar de data van de JSON. Hierdoor vult hij dynamisch de tableheader aan.
+// Hier wordt er tevens voor gezorgd dat de 5e kollom van de tabel bestaat uit verwijder knoppen die hun bijhorend object verwijderen.
 
 function CreateTableFromJSON() {
 
@@ -100,6 +105,8 @@ function CreateTableFromJSON() {
     divContainer.appendChild(table);
 }
 
+//Deze functie haalt de data uit de textvelden die staan op de HTML pagina waarbij het dan pushed naar de JSON.
+
 function erbijerbij() {
 
     var inputnaam = document.getElementById("name");
@@ -113,5 +120,5 @@ function erbijerbij() {
     var timevalue = inputtime.value;
 
     jsonfile['intro'].push({"title": naamvalue, "text": textvalue, "image": imagevalue, "timestamp": timevalue});
-    console.log(jsonfile);
+    // console.log(jsonfile);
 }
