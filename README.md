@@ -19,7 +19,7 @@ Het gebruiken van de library is alleen mogelijk zodra je de bestanden download e
 Er zijn 2 manieren waarop je de library kan gebruiken. De eerste manier is door gewoon alle bestanden te downloaden en gebruik te maken van de voorbeeld JSON en Index.html
 
 De andere manier om van start te gaan is door zowel index.js en index2.js te linken in jou project. dit kan als volgt.
-```
+```javascript
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -40,7 +40,7 @@ De andere manier om van start te gaan is door zowel index.js en index2.js te lin
 ### 2. notificatie sturen
 
 het sturen van een normale notificatie is gelukkig een ontzettend makkelijke functie je gewoon kan aanroepen in je html file. Dit zou dan als volgende uitzien waarbij je bijvoorbeeld een button kan maken die je dan de data meegeeft die je wil zien verschijnen in je notificatie. De library is zodanig opgesteld dat je alleen maar een Title, Text en Image kan meegeven aan de functie.
-```
+```javascript
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -65,7 +65,7 @@ Het gebruiken en aanpassen van een JSON is een wat lastigere toepassing. Om dit 
 
 
 Voeg een testitem toe aan de JSON
-```
+```javascript
 <body>
 
      <button class="button-primary" onclick="addarray()">Voeg item toe aan JSON</button>
@@ -73,7 +73,7 @@ Voeg een testitem toe aan de JSON
 </body>
 ```
 Verwijder de eerste notifcatie uit de JSON
-```
+```javascript
 <body>
 
      <button class="button-primary" onclick="removearray()">Delete notificatie</button>
@@ -81,7 +81,7 @@ Verwijder de eerste notifcatie uit de JSON
 </body>
 ```
 Dit voegt 4 text area's en een button toe waarmee je costum data kan toevoegen aan de JSON
-```
+```javascript
 <body>
 
       <input id="name" type="text" placeholder="Title"> <input id="speech" type="text" placeholder="text"><input id="image" type="text" placeholder="imagepath" ><input id="time" type="text" placeholder="Miliseconds"> <button class="button-primary" onclick="erbijerbij()">Add the above comment to the JSON</button></span>
@@ -89,7 +89,7 @@ Dit voegt 4 text area's en een button toe waarmee je costum data kan toevoegen a
 </body>
 ```
 Deze functie is uniek en zal proberen om je JSON bestand te visualiseren in een tabel. Bij deze tabel zijn delete knoppen ingebouwd zodat je precies kan kiezen welke notificaties je kan verwijderen.
-```
+```javascript
 <body>
 
       <button class="button-primary" onclick="CreateTableFromJSON()">Teken JSON tabel</button>
@@ -101,7 +101,7 @@ Deze functie is uniek en zal proberen om je JSON bestand te visualiseren in een 
 
 Als je het belangrijk vind om je eigen JSON te maken en gebruiken met deze library dan moet je er goed op letten dat je het bestand goed doet inladen in de functie die de "neppe" globale variabele defineert. Deze variabele is in de huidige versie van de library waar alle functies de JSON data vandaan halen. De library is ook om te bouwen zodat de aanpassingen die je maakt aan de JSON kan doorvoeren aan de server maar dit is niet verwerkt in deze versie. Dit is iets waar ik in de toekomst naar zal kijken.
 
-```
+```javascript
 (function (globals) {
     "use strict";
     globals.jsonfile = [];
