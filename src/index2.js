@@ -119,6 +119,6 @@ function erbijerbij() {
     var imagevalue = inputimg.value;
     var timevalue = inputtime.value;
 
-    jsonfile['intro'].push({"title": naamvalue, "text": textvalue, "image": imagevalue, "timestamp": timevalue});
+    jsonfile['intro'].push({"title": naamvalue, "text": textvalue, "image": imagevalue, "timestamp": timevalue})
+}}
     // console.log(jsonfile);
-}
