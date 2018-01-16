@@ -1,7 +1,6 @@
-
-
 //De bootleg fake manier van een globale variabele aanmaken. Dit is gedaan zodat ik maar 1 keer fetch hoef te gebruiken
 // Hierin wordt de JSON data opgehaald en geparsed zodat de rest van de funties alleen maar jsonfile hoeven aan te roepen
+
 (function (globals) {
     "use strict";
     globals.jsonfile = [];
@@ -30,6 +29,7 @@ function wait() {
         pass(i);
 
     }
+}
 
 
 // Deze functie voegt een test object toe aan het bestaande JSON bestand doormiddel van PUSH
@@ -120,5 +120,5 @@ function erbijerbij() {
     var timevalue = inputtime.value;
 
     jsonfile['intro'].push({"title": naamvalue, "text": textvalue, "image": imagevalue, "timestamp": timevalue})
-}}
-    // console.log(jsonfile);
+}
+
